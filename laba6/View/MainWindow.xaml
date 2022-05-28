@@ -1,0 +1,22 @@
+﻿<Window x:Class="laba6.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:laba6"
+    xmlns:vm="clr-namespace:laba6"
+    mc:Ignorable="d"
+    Title="Эти дни." Height="400" Width="600">
+    <Window.DataContext>
+        <vm:ViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="272" Height="42" Margin="130,222,0,0" ItemsSource="{Binding
+Path=getMounth}" SelectedValue="{Binding Path=Mounth2}"/>
+        <Label x:Name="Мусяц"  Content="{Binding Path=Mounth2}" HorizontalAlignment="Left" Margin="227,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="46" Width="84" FontSize="24"/>
+        <Button Content="Расчитать" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top" Height="28" Width="93" Command="{Binding ClickCommand}"/>
+        <Label x:Name="Result" Content="{Binding Path=Result}" HorizontalAlignment="Left" Margin="540,293,0,0" VerticalAlignment="Top" Height="40" Width="78" />
+
+    </Grid>
+</Window>
